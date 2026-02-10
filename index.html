@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Socorrismo Aqualandia - Bienvenida</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .pool-gradient {
+            background: radial-gradient(circle at center, rgba(19, 164, 236, 0.1) 0%, rgba(246, 247, 248, 1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-display overflow-hidden">
+<!-- Decorative Water Element (Top-Right) -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<!-- Decorative Water Element (Bottom-Left) -->
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+<!-- Main Container -->
+<main class="flex-grow flex flex-col items-center justify-between px-8 py-16 relative z-10 max-w-md mx-auto w-full">
+<!-- Header Section -->
+<header class="text-center mt-8">
+<div class="inline-flex items-center justify-center p-3 mb-4 bg-primary/10 rounded-xl">
+<span class="material-icons text-primary text-4xl">pool</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+                Socorrismo<br/>
+<span class="text-primary">Aqualandia</span>
+</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm font-light">
+                Gestión de formación y salvamento
+            </p>
+</header>
+<!-- Illustration Section -->
+<div class="relative w-full flex justify-center items-center py-12">
+<!-- Stylized Lifebuoy Illustration -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+<!-- Outer Shadow/Glow -->
+<div class="absolute inset-0 bg-primary/10 rounded-full animate-pulse"></div>
+<!-- SVG Illustration of a Modern Lifebuoy -->
+<svg class="w-full h-full drop-shadow-2xl" viewbox="0 0 200 200">
+<circle cx="100" cy="100" fill="white" r="80" stroke="#13a4ec" stroke-width="4"></circle>
+<circle cx="100" cy="100" fill="transparent" r="50" stroke="#13a4ec" stroke-width="4"></circle>
+<!-- Red Sections -->
+<path d="M100 20 A80 80 0 0 1 156.5 43.5 L142.4 57.6 A60 60 0 0 0 100 40 Z" fill="#ef4444"></path>
+<path d="M100 180 A80 80 0 0 1 43.5 156.5 L57.6 142.4 A60 60 0 0 0 100 160 Z" fill="#ef4444"></path>
+<path d="M20 100 A80 80 0 0 1 43.5 43.5 L57.6 57.6 A60 60 0 0 0 40 100 Z" fill="#ef4444"></path>
+<path d="M180 100 A80 80 0 0 1 156.5 156.5 L142.4 142.4 A60 60 0 0 0 160 100 Z" fill="#ef4444"></path>
+<!-- Lifebuoy Ropes -->
+<circle cx="100" cy="100" fill="none" r="90" stroke="#e2e8f0" stroke-dasharray="10 10" stroke-width="2"></circle>
+</svg>
+<!-- Center Icon Overlay -->
+<div class="absolute bg-white dark:bg-slate-800 rounded-full p-4 shadow-xl">
+<span class="material-icons text-primary text-5xl">verified_user</span>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="w-full space-y-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center transition-all active:scale-95 group">
+<span class="text-lg">Acceder</span>
+<span class="material-icons ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="flex flex-col items-center gap-2">
+<span class="text-xs text-slate-400 uppercase tracking-widest font-medium">Plataforma Certificada</span>
+<div class="flex gap-4">
+<div class="h-1 w-8 bg-primary rounded-full"></div>
+<div class="h-1 w-8 bg-primary/20 rounded-full"></div>
+<div class="h-1 w-8 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="mt-12 text-center">
+<p class="text-xs text-slate-400 dark:text-slate-500 font-light">
+                Design by <span class="font-semibold text-slate-500 dark:text-slate-400">Juan García</span>
+</p>
+</footer>
+</main>
+<!-- Visual Hint: Wave pattern at bottom -->
+<div class="fixed bottom-0 left-0 w-full overflow-hidden leading-[0] pointer-events-none opacity-40">
+<svg class="relative block w-full h-[60px]" data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C49.1,15.24,103,31.26,158.33,40.45,213.7,49.64,263.39,67.23,321.39,56.44Z" fill="#13a4ec" fill-opacity="0.1"></path>
+</svg>
+</div>
+</body></html>
