@@ -3,10 +3,10 @@
 <html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Socorrismo Aqualandia - Panel Principal</title>
+<title>Detalle del Curso - Socorrismo Aqualandia</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -32,12 +32,25 @@
         }
     </script>
 <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-scroller::-webkit-scrollbar {
+            display: none;
+        }
+        .ios-scroller {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
   </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen flex">
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 antialiased overflow-hidden h-screen flex">
 <!-- Vertical Sidebar -->
 <aside class="w-20 md:w-24 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-8 gap-10 fixed h-full z-20">
 <div class="mb-4">
@@ -46,11 +59,11 @@
 </div>
 </div>
 <nav class="flex flex-col gap-6 w-full px-2">
-<a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="panelprincipal.html">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="panelprincipal.html">
 <span class="material-icons-round">dashboard</span>
 <span class="text-[10px] font-medium mt-1">Inicio</span>
 </a>
-<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="cursos.html">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="cursos.html">
 <span class="material-icons-round">school</span>
 <span class="text-[10px] font-medium mt-1">Cursos</span>
 </a>
@@ -85,167 +98,166 @@
 <span class="text-sm font-medium">3 Alertas activas</span>
 </div>
 </header>
-<!-- Main Content Area -->
-<main class="flex-1 flex flex-col overflow-hidden">
-<!-- Header -->
-<header class="h-20 bg-white dark:bg-slate-900 border-b border-primary/10 flex items-center justify-between px-8 shrink-0">
-<div>
-<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Gestión de Cursos</h1>
-<p class="text-sm text-slate-500">Administra y edita la oferta formativa actual.</p>
+<!-- Welcome Banner -->
+<section class="mb-10 relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[#0086c9] p-8 text-white">
+<div class="relative z-10 max-w-md">
+<h2 class="text-2xl font-semibold mb-2">¡Hola, Profe!</h2>
+<p class="text-white/80 leading-relaxed mb-6">Tienes 2 exámenes de certificación pendientes de corregir para el curso de salvamento avanzado.</p>
+<button class="bg-white text-primary px-6 py-2 rounded-lg font-semibold text-sm shadow-lg hover:bg-slate-50 transition-colors">
+                    Revisar ahora
+                </button>
 </div>
-<div class="flex items-center gap-4">
-<button class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-medium shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
-<span class="material-icons text-sm">add</span>
-<span>Nuevo Curso</span>
+<!-- Decorative circle -->
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute right-10 bottom-0 opacity-20">
+<span class="material-icons-round text-[160px]">pool</span>
+</div>
+</section>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full relative">
+<!-- Header -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 px-6 py-6 border-b border-slate-200 dark:border-slate-800 z-40">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-icons text-slate-600 dark:text-slate-300">chevron_left</span>
 </button>
+<div>
+<h1 class="text-xl font-bold tracking-tight">Curso Socorrismo Mayo 2024</h1>
+<p class="text-xs font-medium text-primary uppercase tracking-wider">Módulo: Primeros Auxilios Avanzados</p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-xs font-medium text-slate-500">En Directo</span>
+</div>
 </div>
 </header>
-<!-- Content -->
-<section class="flex-1 overflow-y-auto p-4 md:p-8 bg-background-light dark:bg-background-dark">
-<div class="max-w-5xl mx-auto space-y-6">
-<!-- Search and Filter Bar -->
-<div class="flex flex-col md:flex-row gap-4 mb-8">
-<div class="relative flex-1">
-<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-<input class="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary/50 transition-all shadow-sm" placeholder="Buscar por nombre de curso..." type="text"/>
+<!-- Content Scroller -->
+<div class="flex-1 overflow-y-auto ios-scroller p-4 lg:p-6 space-y-6">
+<!-- Calendar / Day Tracker -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Calendario de Asistencia</h2>
+<span class="text-xs text-primary font-medium">Hoy: 22 de Mayo</span>
 </div>
-<button class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-primary/5 text-slate-600 dark:text-slate-400 flex items-center justify-center">
-<span class="material-icons">filter_list</span>
+<div class="flex space-x-3 overflow-x-auto ios-scroller pb-2">
+<!-- Day Card -->
+<button class="flex-shrink-0 w-16 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center space-y-1 transition-all">
+<span class="text-[10px] font-bold text-slate-400">LUN</span>
+<span class="text-lg font-bold">20</span>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center space-y-1 transition-all">
+<span class="text-[10px] font-bold text-slate-400">MAR</span>
+<span class="text-lg font-bold">21</span>
+</button>
+<!-- Active Day -->
+<button class="flex-shrink-0 w-16 h-20 rounded-2xl bg-primary text-white shadow-lg shadow-primary/30 flex flex-col items-center justify-center space-y-1 scale-110 mx-2">
+<span class="text-[10px] font-bold opacity-80">MIÉ</span>
+<span class="text-lg font-bold">22</span>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center space-y-1">
+<span class="text-[10px] font-bold text-slate-400">JUE</span>
+<span class="text-lg font-bold">23</span>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center space-y-1 opacity-50">
+<span class="text-[10px] font-bold text-slate-400">VIE</span>
+<span class="text-lg font-bold">24</span>
 </button>
 </div>
-<!-- Course Cards Grid -->
-<div class="grid grid-cols-1 gap-6">
-<!-- Course Card 1 -->
-<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
-<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-<span class="material-icons text-3xl">pool</span>
+</section>
+<!-- Student List & Passing List -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Alumnos Inscritos (12)</h2>
+<button class="text-xs font-semibold text-primary flex items-center">
+<span class="material-icons text-sm mr-1">done_all</span> Marcar todos
+                    </button>
 </div>
-<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="Socorrismo Básico"/>
+<div class="space-y-3">
+<!-- Student Row -->
+<div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Student headshot portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0_lOhPoT-iUAqcboVeIJ5rialOG_a6OBxH12pFISzmMRQSXuarOXrPhfxZOsi6xlpu9c54cgbTzmQXcjSY5kVVqaZxJp90Ji03iZtvNBEfCBFpqE7n_Ts8yYe6n8UKpUrzr7jLy73vVlkaAne-ZZ7WHYUFB2IMC2M6wqn1Wmsq_7AcoVUiQUoXLIpfa-JJhe3t7ZECbyj492A3FBMQiFhRH4LX95prLvJvut0r7Qlgnytc-dFAU8_brdgfeoUOsEKQ1wWIrY0Jw"/>
 </div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
-<div class="relative">
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="12/05/2024"/>
-<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
-</div>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
-<div class="flex items-center gap-3 py-2">
-<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">15</span>
-<span class="text-xs text-slate-400 italic">Cupo completo</span>
+<div>
+<p class="font-semibold text-sm">Alejandro García</p>
+<p class="text-[10px] text-slate-400">Asistencia: 95%</p>
 </div>
 </div>
+<input checked="" class="w-6 h-6 rounded-full text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" type="checkbox"/>
 </div>
-<div class="flex md:flex-col gap-2 shrink-0">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
+<!-- Student Row -->
+<div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Student headshot portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5_A2rnVM81H2nNC0aniKRoOoHNe-vBf9FYRKFIwN67Ij5i4OIwhZNrprvg1ECoIDShpBjaUh4Um4uW0tDqdbPxTHpsS_lU1nQq_O5renbgfCmG2yBtIbocwQ6rSIi8yHMs7eKGuULbteHgVHyzjOpJ7nFJuRR9Sk5f-YDV3uCmVPIB-YBC53WPI7cGY4jLxDuXBi5I1qymLMy4duz9UZN8glDAQIBFMAeG3izqDdzgg9eSTl9OAhCCmlAq_xZbBpAKXSDbUg18g"/>
 </div>
-</div>
-<!-- Course Card 2 -->
-<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
-<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-<span class="material-icons text-3xl">medical_services</span>
-</div>
-<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="RCP Avanzada"/>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
-<div class="relative">
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="15/05/2024"/>
-<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+<div>
+<p class="font-semibold text-sm">Lucía Martínez</p>
+<p class="text-[10px] text-slate-400">Asistencia: 88%</p>
 </div>
 </div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
-<div class="flex items-center gap-3 py-2">
-<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">10</span>
-<span class="text-xs text-slate-400 italic">2 plazas libres</span>
+<input checked="" class="w-6 h-6 rounded-full text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" type="checkbox"/>
+</div>
+<!-- Student Row -->
+<div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Student headshot portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH10icIjMdhrc355eMdgvc-Ab0ueYeNqLw92xGbimMaED6Dja6_gk5JsvCdfZv-rCaRPTSu9pqmKHMe0OCKkEo9tKzEvNQx5GuuErze60YvGjGs6KT057ntSFcI0HrVirWYKuLTsIP6k-NowsSSiJk-LUvjFg6OJpTZYc4jg91KkugVhffIAJfXVV6vuCnAdXHNBG503DQr_792FitS1fpvhtM9EvytaZbQEqfT9K856GFvXWDntGW_nnhxDeqOfIma_51U7BrYQ"/>
+</div>
+<div>
+<p class="font-semibold text-sm">Marcos Ruiz</p>
+<p class="text-[10px] text-slate-400">Asistencia: 72%</p>
 </div>
 </div>
+<input class="w-6 h-6 rounded-full text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" type="checkbox"/>
 </div>
-<div class="flex md:flex-col gap-2 shrink-0">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
+<!-- Student Row -->
+<div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Student headshot portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADYuyKCBIkabJ_haBnT5j7BXNlYz4gf1r0vrqHOPSr79xO_erCVj5pwPoXqTlN26AIJCWzBWuk2WTTqfPbLC476HJX-JouFUEMNyde7mygNxrWrLyNmFjupCTE6ikCWcPQ1eMTpBYM4wxoasOCssMzEstv_iZ3ZLEsEc9YNG7wgGYFY8wzcoXfQWGgQABeNsIhA_qhZMzNV-ZwNvRgM4Rl65SqA6PfJYwB5ISkSHsYXAzmVhdg9HoFaKjm2MTMlkbABJAb7xG9Hg"/>
 </div>
-</div>
-<!-- Course Card 3 -->
-<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
-<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-<span class="material-icons text-3xl">health_and_safety</span>
-</div>
-<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="Primeros Auxilios"/>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
-<div class="relative">
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="20/05/2024"/>
-<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+<div>
+<p class="font-semibold text-sm">Elena Sanz</p>
+<p class="text-[10px] text-slate-400">Asistencia: 100%</p>
 </div>
 </div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
-<div class="flex items-center gap-3 py-2">
-<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">22</span>
-<span class="text-xs text-slate-400 italic">Grupo numeroso</span>
-</div>
-</div>
-</div>
-<div class="flex md:flex-col gap-2 shrink-0">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
-</div>
-</div>
-<!-- Course Card 4 -->
-<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
-<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-<span class="material-icons text-3xl">lifebuoy</span>
-</div>
-<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="Rescate Acuático"/>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
-<div class="relative">
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="25/05/2024"/>
-<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
-</div>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
-<div class="flex items-center gap-3 py-2">
-<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">08</span>
-<span class="text-xs text-slate-400 italic">Inscripciones abiertas</span>
-</div>
-</div>
-</div>
-<div class="flex md:flex-col gap-2 shrink-0">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
-</div>
-</div>
+<input checked="" class="w-6 h-6 rounded-full text-primary focus:ring-primary border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" type="checkbox"/>
 </div>
 </div>
 </section>
-<!-- Status Bar / Footer (iOS Style) -->
-<footer class="h-12 bg-white dark:bg-slate-900 border-t border-primary/10 flex items-center justify-between px-8 text-[10px] uppercase font-bold text-slate-400 tracking-widest shrink-0">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-green-500"></span>
-                    Sincronizado con el servidor
-                </div>
-<div>v2.4.0 Socorrismo Aqualandia</div>
-</footer>
-</main>
+<!-- Observations Section -->
+<section class="pb-24">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Observaciones Diarias</h2>
+<span class="material-icons text-slate-400 text-sm">edit_note</span>
 </div>
+<div class="relative">
+<textarea class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-sm focus:ring-primary focus:border-primary placeholder:text-slate-400" placeholder="Añade notas sobre el desempeño del grupo, incidencias o material necesario..." rows="5"></textarea>
+<div class="absolute bottom-4 right-4 flex space-x-2">
+<button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-400">
+<span class="material-icons text-base">attach_file</span>
+</button>
+<button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-400">
+<span class="material-icons text-base">mic</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Floating Footer Action Button -->
+<div class="absolute bottom-6 right-6 left-6 flex space-x-3 pointer-events-none">
+<div class="flex-1"></div>
+<button class="pointer-events-auto h-16 px-8 rounded-full bg-primary text-white font-bold flex items-center justify-center space-x-3 shadow-2xl shadow-primary/40 active:scale-95 transition-transform">
+<span class="material-icons">save</span>
+<span>GUARDAR SESIÓN</span>
+</button>
+</div>
+<!-- IOS Bottom Indicator Bar -->
+<div class="h-1.5 w-32 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-2 opacity-50 absolute bottom-1 left-1/2 -translate-x-1/2"></div>
+</main>
 </body></html>
