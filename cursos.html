@@ -40,45 +40,52 @@
 <body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
 <div class="flex h-screen overflow-hidden">
 <!-- Sidebar - Tablet/iOS style -->
-<aside class="w-20 md:w-64 bg-white dark:bg-slate-900 border-r border-primary/10 flex flex-col transition-all duration-300">
-<div class="p-6 flex items-center gap-3">
-<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shrink-0">
-<span class="material-icons">waves</span>
+<aside class="w-20 md:w-24 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-8 gap-10 fixed h-full z-20">
+<div class="mb-4">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-icons-round text-3xl">waves</span>
 </div>
-<span class="hidden md:block font-bold text-xl text-primary tracking-tight">Aqualandia</span>
 </div>
-<nav class="flex-1 mt-6 px-3 space-y-2">
-<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
-<span class="material-icons">dashboard</span>
-<span class="hidden md:block font-medium">Dashboard</span>
+<nav class="flex flex-col gap-6 w-full px-2">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="panelprincipal.html">
+<span class="material-icons-round">dashboard</span>
+<span class="text-[10px] font-medium mt-1">Inicio</span>
 </a>
-<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-primary/10 text-primary transition-colors" href="#">
-<span class="material-icons">school</span>
-<span class="hidden md:block font-medium">Cursos</span>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="cursos.html">
+<span class="material-icons-round">school</span>
+<span class="text-[10px] font-medium mt-1">Cursos</span>
 </a>
-<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
-<span class="material-icons">groups</span>
-<span class="hidden md:block font-medium">Instructores</span>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="alumnos.html">
+<span class="material-icons-round">people</span>
+<span class="text-[10px] font-medium mt-1">Alumnos</span>
 </a>
-<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
-<span class="material-icons">calendar_month</span>
-<span class="hidden md:block font-medium">Horarios</span>
-</a>
-<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
-<span class="material-icons">settings</span>
-<span class="hidden md:block font-medium">Ajustes</span>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-icons-round">calendar_today</span>
+<span class="text-[10px] font-medium mt-1">Agenda</span>
 </a>
 </nav>
-<div class="p-4 border-t border-primary/10">
-<div class="flex items-center gap-3 p-2">
-<img alt="Perfil" class="w-10 h-10 rounded-full border-2 border-primary/20" data-alt="Profile photo of a professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWUF7PmK8IYLv0iWPpqm6MnpTZdEqe_Mw3MLSvFl7xSVNIlxAtOMCaoMkiIb1l6ch3nlBR1n9Q0bH39oCWCvY3ahaM6jgZzVOsoq62P6Xa0qr7J3BvP6lUqwW7BYka-3hW0in9FVvxhR73l1DrxIuHbaWmSzIs1R1HK4LDa8l4XuuSDXnvZUGrpRWDoHAJJrgKMmF4DMNPSfwxP0sg29xVt16Z9HOZ7AkUWKj_c7Dt5d_Tq2xccV_kM0xDVIWX4QZdDqzt39IYRQ"/>
-<div class="hidden md:block">
-<p class="text-sm font-semibold">Juan Pérez</p>
-<p class="text-xs text-slate-500">Coordinador</p>
-</div>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-icons-round">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="Profile picture" src="https://www.aqualandia.net/wp-content/themes/enfoca-child/images/logo-aqualandia.png"/>
 </div>
 </div>
 </aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-20 md:ml-24 p-6 md:p-10 pb-24">
+<!-- Header Section -->
+<header class="mb-10 flex justify-between items-center">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Panel Principal</h1>
+<p class="text-slate-500 dark:text-slate-400 font-light mt-1">Socorrismo Aqualandia Management</p>
+</div>
+<div class="hidden md:flex bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 items-center gap-3">
+<span class="material-icons-round text-primary">notifications</span>
+<span class="text-sm font-medium">3 Alertas activas</span>
+</div>
+</header>
 <!-- Main Content Area -->
 <main class="flex-1 flex flex-col overflow-hidden">
 <!-- Header -->
