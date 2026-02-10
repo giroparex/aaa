@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Socorrismo Aqualandia - Gestión de Cursos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar - Tablet/iOS style -->
+<aside class="w-20 md:w-64 bg-white dark:bg-slate-900 border-r border-primary/10 flex flex-col transition-all duration-300">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shrink-0">
+<span class="material-icons">waves</span>
+</div>
+<span class="hidden md:block font-bold text-xl text-primary tracking-tight">Aqualandia</span>
+</div>
+<nav class="flex-1 mt-6 px-3 space-y-2">
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-icons">dashboard</span>
+<span class="hidden md:block font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-icons">school</span>
+<span class="hidden md:block font-medium">Cursos</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-icons">groups</span>
+<span class="hidden md:block font-medium">Instructores</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-icons">calendar_month</span>
+<span class="hidden md:block font-medium">Horarios</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/5 transition-colors" href="#">
+<span class="material-icons">settings</span>
+<span class="hidden md:block font-medium">Ajustes</span>
+</a>
+</nav>
+<div class="p-4 border-t border-primary/10">
+<div class="flex items-center gap-3 p-2">
+<img alt="Perfil" class="w-10 h-10 rounded-full border-2 border-primary/20" data-alt="Profile photo of a professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWUF7PmK8IYLv0iWPpqm6MnpTZdEqe_Mw3MLSvFl7xSVNIlxAtOMCaoMkiIb1l6ch3nlBR1n9Q0bH39oCWCvY3ahaM6jgZzVOsoq62P6Xa0qr7J3BvP6lUqwW7BYka-3hW0in9FVvxhR73l1DrxIuHbaWmSzIs1R1HK4LDa8l4XuuSDXnvZUGrpRWDoHAJJrgKMmF4DMNPSfwxP0sg29xVt16Z9HOZ7AkUWKj_c7Dt5d_Tq2xccV_kM0xDVIWX4QZdDqzt39IYRQ"/>
+<div class="hidden md:block">
+<p class="text-sm font-semibold">Juan Pérez</p>
+<p class="text-xs text-slate-500">Coordinador</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-20 bg-white dark:bg-slate-900 border-b border-primary/10 flex items-center justify-between px-8 shrink-0">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Gestión de Cursos</h1>
+<p class="text-sm text-slate-500">Administra y edita la oferta formativa actual.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl font-medium shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+<span class="material-icons text-sm">add</span>
+<span>Nuevo Curso</span>
+</button>
+</div>
+</header>
+<!-- Content -->
+<section class="flex-1 overflow-y-auto p-4 md:p-8 bg-background-light dark:bg-background-dark">
+<div class="max-w-5xl mx-auto space-y-6">
+<!-- Search and Filter Bar -->
+<div class="flex flex-col md:flex-row gap-4 mb-8">
+<div class="relative flex-1">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary/50 transition-all shadow-sm" placeholder="Buscar por nombre de curso..." type="text"/>
+</div>
+<button class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-primary/5 text-slate-600 dark:text-slate-400 flex items-center justify-center">
+<span class="material-icons">filter_list</span>
+</button>
+</div>
+<!-- Course Cards Grid -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Course Card 1 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
+<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+<span class="material-icons text-3xl">pool</span>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="Socorrismo Básico"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
+<div class="relative">
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="12/05/2024"/>
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
+<div class="flex items-center gap-3 py-2">
+<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">15</span>
+<span class="text-xs text-slate-400 italic">Cupo completo</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 shrink-0">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
+<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+<span class="material-icons text-3xl">medical_services</span>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="RCP Avanzada"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
+<div class="relative">
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="15/05/2024"/>
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
+<div class="flex items-center gap-3 py-2">
+<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">10</span>
+<span class="text-xs text-slate-400 italic">2 plazas libres</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 shrink-0">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
+<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+<span class="material-icons text-3xl">health_and_safety</span>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="Primeros Auxilios"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
+<div class="relative">
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="20/05/2024"/>
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
+<div class="flex items-center gap-3 py-2">
+<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">22</span>
+<span class="text-xs text-slate-400 italic">Grupo numeroso</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 shrink-0">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
+</div>
+</div>
+<!-- Course Card 4 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col md:flex-row md:items-center gap-6">
+<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+<span class="material-icons text-3xl">lifebuoy</span>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nombre del curso</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium" type="text" value="Rescate Acuático"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fecha de las clases</label>
+<div class="relative">
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg focus:ring-1 focus:ring-primary py-2 text-slate-900 dark:text-white font-medium pl-10" type="text" value="25/05/2024"/>
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Nº de alumnos</label>
+<div class="flex items-center gap-3 py-2">
+<span class="px-4 py-1.5 bg-primary/5 text-primary font-bold rounded-lg border border-primary/10">08</span>
+<span class="text-xs text-slate-400 italic">Inscripciones abiertas</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 shrink-0">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-icons">save</span></button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><span class="material-icons">delete_outline</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Status Bar / Footer (iOS Style) -->
+<footer class="h-12 bg-white dark:bg-slate-900 border-t border-primary/10 flex items-center justify-between px-8 text-[10px] uppercase font-bold text-slate-400 tracking-widest shrink-0">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    Sincronizado con el servidor
+                </div>
+<div>v2.4.0 Socorrismo Aqualandia</div>
+</footer>
+</main>
+</div>
+</body></html>
