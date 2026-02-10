@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Socorrismo Aqualandia - Panel Principal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen flex">
+<!-- Vertical Sidebar -->
+<aside class="w-20 md:w-24 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-8 gap-10 fixed h-full z-20">
+<div class="mb-4">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-icons-round text-3xl">waves</span>
+</div>
+</div>
+<nav class="flex flex-col gap-6 w-full px-2">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="#">
+<span class="material-icons-round">dashboard</span>
+<span class="text-[10px] font-medium mt-1">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-icons-round">school</span>
+<span class="text-[10px] font-medium mt-1">Cursos</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-icons-round">people</span>
+<span class="text-[10px] font-medium mt-1">Alumnos</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-icons-round">calendar_today</span>
+<span class="text-[10px] font-medium mt-1">Agenda</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-icons-round">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="Profile picture of a male lifeguard trainer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNmutF33qo-qqEoHbFhSMI1UPyiCR-oyK5KzNwIHEPSQS2qi9DX9gySe7w7IGfH4XWntDUXsagErHHS3uJWlRMRjmZMXxdMeFskL6SkOWXNjYef0ENasUWvIwZoA99EIenzyxv0obxeBBPn9jMd6GwaXuzhNwy8iCVyvFbEwZY2kgPDSEuGYPOi1ZTb5xHhrSGrN8FPlWxc_2EJhOjp4Y-vYjUA2Jd3i0mXbhJyLz6bbZefAoNdvjpREUWxg66OCLL17QF0T3vA"/>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-20 md:ml-24 p-6 md:p-10 pb-24">
+<!-- Header Section -->
+<header class="mb-10 flex justify-between items-center">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Panel Principal</h1>
+<p class="text-slate-500 dark:text-slate-400 font-light mt-1">Socorrismo Aqualandia Management</p>
+</div>
+<div class="hidden md:flex bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 items-center gap-3">
+<span class="material-icons-round text-primary">notifications</span>
+<span class="text-sm font-medium">3 Alertas activas</span>
+</div>
+</header>
+<!-- Welcome Banner -->
+<section class="mb-10 relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[#0086c9] p-8 text-white">
+<div class="relative z-10 max-w-md">
+<h2 class="text-2xl font-semibold mb-2">¡Hola, Javier!</h2>
+<p class="text-white/80 leading-relaxed mb-6">Tienes 2 exámenes de certificación pendientes de corregir para el curso de salvamento avanzado.</p>
+<button class="bg-white text-primary px-6 py-2 rounded-lg font-semibold text-sm shadow-lg hover:bg-slate-50 transition-colors">
+                    Revisar ahora
+                </button>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute right-10 bottom-0 opacity-20">
+<span class="material-icons-round text-[160px]">pool</span>
+</div>
+</section>
+<!-- Main Action Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Cursos Card -->
+<button class="group bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-all text-left flex flex-col">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-round text-3xl">school</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Cursos</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Gestión de formación, certificaciones y materiales didácticos.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-50 dark:border-slate-700 w-full">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-400">8 Cursos activos</span>
+<span class="material-icons-round text-primary">arrow_forward</span>
+</div>
+</button>
+<!-- Alumnos Card -->
+<button class="group bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-all text-left flex flex-col">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-round text-3xl">groups</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Alumnos</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Base de datos de alumnos, expedientes médicos y asistencia.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-50 dark:border-slate-700 w-full">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-400">124 Alumnos</span>
+<span class="material-icons-round text-primary">arrow_forward</span>
+</div>
+</button>
+<!-- Agenda Card -->
+<button class="group bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-all text-left flex flex-col">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-round text-3xl">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Agenda</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Horarios de clases, exámenes y reservas de piscina.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-50 dark:border-slate-700 w-full">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Hoy: 3 Sesiones</span>
+<span class="material-icons-round text-primary">arrow_forward</span>
+</div>
+</button>
+</div>
+<!-- Secondary Information / Recent Activity -->
+<section class="mt-12">
+<h4 class="text-lg font-semibold mb-6 flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                Próximas Sesiones
+            </h4>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl flex items-center gap-4 border border-slate-100 dark:border-slate-700">
+<div class="w-12 h-12 bg-slate-50 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center border border-slate-200 dark:border-slate-600">
+<span class="text-[10px] font-bold uppercase text-slate-400">Oct</span>
+<span class="text-lg font-bold leading-none">24</span>
+</div>
+<div class="flex-1">
+<h5 class="font-semibold text-sm">Prácticas RCP Avanzada</h5>
+<p class="text-xs text-slate-500">Piscina Olímpica A • 16:00 - 18:00</p>
+</div>
+<div class="flex -space-x-2">
+<img class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKFc92s3Xt4ZAFymE5Ijjfn-jW1GrjoT26s886bSqKgBRLix7UV27dG0wc79cB3bsNWHz6Xa__BZTZScJjeFwDAJiyeEVk3CuVBk3aR6qeD8wmZfv1EfFG4fKn-lTrblhHiGzC7NroRdVZvV6WNovnCFGcsIR5vRQ80hafxIYHDvFdXPX08kzTdBUJVWckTfzTPYcWZFrJXMUXt5tZ8Q_GWEVa9tVKAdk5smjbBQ4rJ1kzuqAUWDeAxgTyXlUmq2RxWcFiVZ3EFA"/>
+<img class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9c55FVuO9gu9V62cPAn8INGsuhgBDlRc1QsXhNyILLssIkG2Og3scQgpEAeYrZYjlr_hVqPRdZg1KGcDFlkr5dimBH4WJKzr0K5Py4aZDA9h_5Etb5hbqjhR5RzgWbJp9v4WmrGAiHmBmpu4cnAq0WPnEiL8DuzCDp1c_sUTUSIX9wvZ6aPAp_SjP4dWLlBH3GIxCTxegGGSudV8X1nj0owEQY1-CllqQKJ7QTD3DrnzOejjfhTWyTam0cHyArILVmbfCKw9u0A"/>
+<div class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-600">+12</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl flex items-center gap-4 border border-slate-100 dark:border-slate-700">
+<div class="w-12 h-12 bg-slate-50 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center border border-slate-200 dark:border-slate-600">
+<span class="text-[10px] font-bold uppercase text-slate-400">Oct</span>
+<span class="text-lg font-bold leading-none">25</span>
+</div>
+<div class="flex-1">
+<h5 class="font-semibold text-sm">Examen Teórico Módulo 2</h5>
+<p class="text-xs text-slate-500">Aula Magna • 09:30 - 11:00</p>
+</div>
+<div class="px-3 py-1 bg-yellow-100 text-yellow-700 text-[10px] font-bold rounded-full uppercase">Crítico</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button for Mobile Context -->
+<div class="fixed bottom-6 right-6 md:right-10 z-30">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+</div>
+</body></html>
