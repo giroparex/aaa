@@ -47,40 +47,52 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
 <div class="flex h-screen overflow-hidden">
 <!-- Sidebar -->
-<aside class="w-20 md:w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
-<div class="p-4 md:p-6 mb-4 flex items-center justify-center md:justify-start gap-3">
-<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
-<span class="material-icons-round text-white">waves</span>
+<aside class="w-20 md:w-24 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-8 gap-10 fixed h-full z-20">
+<div class="mb-4">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-icons-round text-3xl">waves</span>
 </div>
-<h1 class="hidden md:block font-bold text-xl tracking-tight text-slate-900 dark:text-white leading-tight">
-                    Aqualandia
-                </h1>
 </div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center px-4 md:px-6 py-4 text-slate-500 hover:text-primary transition-colors" href="#">
+<nav class="flex flex-col gap-6 w-full px-2">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="panelprincipal.html">
 <span class="material-icons-round">dashboard</span>
-<span class="ml-4 hidden md:block font-medium text-sm">Panel Control</span>
+<span class="text-[10px] font-medium mt-1">Inicio</span>
 </a>
-<a class="sidebar-item-active flex items-center px-4 md:px-6 py-4 transition-colors" href="#">
-<span class="material-icons-round">group</span>
-<span class="ml-4 hidden md:block font-medium text-sm">Alumnos</span>
-</a>
-<a class="flex items-center px-4 md:px-6 py-4 text-slate-500 hover:text-primary transition-colors" href="#">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="cursos.html">
 <span class="material-icons-round">school</span>
-<span class="ml-4 hidden md:block font-medium text-sm">Cursos</span>
+<span class="text-[10px] font-medium mt-1">Cursos</span>
 </a>
-<a class="flex items-center px-4 md:px-6 py-4 text-slate-500 hover:text-primary transition-colors" href="#">
-<span class="material-icons-round">calendar_month</span>
-<span class="ml-4 hidden md:block font-medium text-sm">Horarios</span>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="alumnos.html">
+<span class="material-icons-round">people</span>
+<span class="text-[10px] font-medium mt-1">Alumnos</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-icons-round">calendar_today</span>
+<span class="text-[10px] font-medium mt-1">Agenda</span>
 </a>
 </nav>
-<div class="p-4 md:p-6 border-t border-slate-100 dark:border-slate-800">
-<a class="flex items-center px-0 md:px-0 py-2 text-slate-500 hover:text-red-500 transition-colors" href="#">
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
 <span class="material-icons-round">settings</span>
-<span class="ml-4 hidden md:block font-medium text-sm">Ajustes</span>
-</a>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="Profile picture" src="https://www.aqualandia.net/wp-content/themes/enfoca-child/images/logo-aqualandia.png"/>
+</div>
 </div>
 </aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-20 md:ml-24 p-6 md:p-10 pb-24">
+<!-- Header Section -->
+<header class="mb-10 flex justify-between items-center">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Panel Principal</h1>
+<p class="text-slate-500 dark:text-slate-400 font-light mt-1">Socorrismo Aqualandia Management</p>
+</div>
+<div class="hidden md:flex bg-white dark:bg-slate-800 px-4 py-2 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 items-center gap-3">
+<span class="material-icons-round text-primary">notifications</span>
+<span class="text-sm font-medium">3 Alertas activas</span>
+</div>
+</header>
 <!-- Main Content -->
 <main class="flex-1 flex flex-col h-full overflow-hidden">
 <!-- Header -->
