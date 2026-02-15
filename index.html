@@ -116,12 +116,8 @@
     const inputField = document.getElementById('passwordInput');
     const pass = inputField.value.trim();
     const errorMsg = document.getElementById('errorMessage');
-
     const PASS_ENCODED = "MTIzNHF3ZXI=";
-
-    // Convertimos lo que el usuario escribe a Base64 para comparar
     const passToCompare = btoa(pass);
-
     if (passToCompare === PASS_ENCODED) {
         sessionStorage.setItem('acceso_permitido', 'true');
         window.location.href = "panelprincipal.html";
