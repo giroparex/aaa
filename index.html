@@ -35,7 +35,6 @@
         body {
             font-family: 'Lexend', sans-serif;
             -webkit-tap-highlight-color: transparent;
-            /* Se asegura de que el cuerpo ocupe al menos el alto de la pantalla dinámica */
             min-height: 100dvh;
         }
         .pool-gradient {
@@ -89,13 +88,12 @@
                     class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary focus:ring-0 outline-none transition-all">
                 <p id="errorMessage" class="text-red-500 text-xs hidden ml-1">Contraseña incorrecta, inténtalo de nuevo.</p>
             </div>
-<div class="w-full space-y-6">
-            <button onclick="checkPassword()" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center transition-all active:scale-95 group">
-                <span class="text-lg">Acceder</span>
-                <span class="material-icons ml-2 group-hover:translate-x-1 transition-transform">login</span>
-            </button>
-        </div>
-        </a>
+            <div class="w-full space-y-6">
+                <button onclick="checkPassword()" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center transition-all active:scale-95 group">
+                    <span class="text-lg">Acceder</span>
+                    <span class="material-icons ml-2 group-hover:translate-x-1 transition-transform">login</span>
+                </button>
+            </div>
             <div class="flex flex-col items-center gap-4">
                 <span class="text-xs text-slate-400 uppercase tracking-widest font-medium">Plataforma Educativa</span>
                 <div class="flex gap-4">
@@ -103,13 +101,17 @@
                     <div class="h-1 w-8 bg-primary rounded-full"></div>
                     <div class="h-1 w-8 bg-primary rounded-full"></div>
                 </div>
+            </div>
+        </div>
+
         <footer class="mt-8 text-center">
             <p class="text-xs text-slate-400 dark:text-slate-500 font-light">
                 Design by <span class="font-semibold text-slate-500 dark:text-slate-400">Juan García</span>
             </p>
         </footer>
     </main>
-     <script>
+
+    <script>
         function checkPassword() {
             const pass = document.getElementById('passwordInput').value;
             const errorMsg = document.getElementById('errorMessage');
@@ -119,6 +121,8 @@
             const CONTRASEÑA_CORRECTA = "1234qwer"; 
 
             if (pass === CONTRASEÑA_CORRECTA) {
+                // GUARDAR PERMISO EN EL NAVEGADOR
+                sessionStorage.setItem('acceso_permitido', 'true');
                 // Redirigir si es correcta
                 window.location.href = "panelprincipal.html";
             } else {
