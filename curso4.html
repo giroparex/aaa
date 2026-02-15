@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html class="light" lang="es">
+    <script>
+  if (sessionStorage.getItem('acceso_permitido') !== 'true') {
+      window.location.href = "index.html";
+  }
+</script>
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
