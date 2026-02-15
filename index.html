@@ -112,30 +112,34 @@
     </main>
 
     <script>
-        function checkPassword() {
-            const pass = document.getElementById('passwordInput').value;
-            const errorMsg = document.getElementById('errorMessage');
-            const inputField = document.getElementById('passwordInput');
+        async function checkPassword() {
+    const inputField = document.getElementById('passwordInput');
+    const pass = inputField.value.trim(); // .trim() elimina espacios accidentales
+    const errorMsg = document.getElementById('errorMessage');
+    
+    // Hash
+    const HASH_CORRECTO = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
 
-            // --- CAMBIA LA CONTRASEÑA AQUÍ ---
-            const CONTRASEÑA_CORRECTA = "1234qwer"; 
+    try {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(pass);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-            if (pass === CONTRASEÑA_CORRECTA) {
-                // GUARDAR PERMISO EN EL NAVEGADOR
-                sessionStorage.setItem('acceso_permitido', 'true');
-                // Redirigir si es correcta
-                window.location.href = "panelprincipal.html";
-            } else {
-                // Efecto de error
-                errorMsg.classList.remove('hidden');
-                inputField.classList.add('border-red-500', 'shake');
-                
-                // Limpiar efectos después de la animación
-                setTimeout(() => {
-                    inputField.classList.remove('shake');
-                }, 400);
-            }
+        if (hashHex === HASH_CORRECTO) {
+            sessionStorage.setItem('acceso_permitido', 'true');
+            window.location.href = "panelprincipal.html";
+        } else {
+            errorMsg.classList.remove('hidden');
+            inputField.classList.add('border-red-500', 'shake');
+            setTimeout(() => inputField.classList.remove('shake'), 400);
         }
+    } catch (e) {
+        console.error("Error en el cifrado:", e);
+        alert("Tu navegador no soporta esta función de seguridad.");
+    }
+}
 
         // Permitir entrar al presionar "Enter"
         document.getElementById('passwordInput').addEventListener('keypress', function (e) {
