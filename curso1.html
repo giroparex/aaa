@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Detalle del Curso - Socorrismo Aqualandia</title>
+    <title>Asistencia - Socorrismo Aqualandia</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
@@ -19,33 +19,17 @@
                         "background-light": "#f6f7f8",
                         "background-dark": "#101c22",
                     },
-                    fontFamily: {
-                        "display": ["Lexend"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    fontFamily: { "display": ["Lexend"] },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
 
     <style>
-        body {
-            font-family: 'Lexend', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-            min-height: max(884px, 100dvh);
-        }
-        .ios-scroller::-webkit-scrollbar {
-            display: none;
-        }
-        .ios-scroller {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        body { font-family: 'Lexend', sans-serif; -webkit-tap-highlight-color: transparent; min-height: 100dvh; }
+        .ios-scroller::-webkit-scrollbar { display: none; }
+        .ios-scroller { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 
@@ -58,31 +42,10 @@
             </div>
         </div>
         <nav class="flex flex-col gap-6 w-full px-2">
-            <a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="panelprincipal.html">
-                <span class="material-icons-round">dashboard</span>
-                <span class="text-[10px] font-medium mt-1">Inicio</span>
-            </a>
-            <a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="cursos.html">
-                <span class="material-icons-round">school</span>
-                <span class="text-[10px] font-medium mt-1">Cursos</span>
-            </a>
-            <a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="alumnos.html">
-                <span class="material-icons-round">people</span>
-                <span class="text-[10px] font-medium mt-1">Alumnos</span>
-            </a>
-            <a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="agenda.html">
-                <span class="material-icons-round">calendar_today</span>
-                <span class="text-[10px] font-medium mt-1">Agenda</span>
-            </a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800" href="#"><span class="material-icons-round">dashboard</span></a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary" href="#"><span class="material-icons-round">school</span></a>
+            <a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800" href="#"><span class="material-icons-round">people</span></a>
         </nav>
-        <div class="mt-auto flex flex-col gap-4">
-            <button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
-                <span class="material-icons-round">settings</span>
-            </button>
-            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
-                <img class="w-full h-full object-cover" src="https://www.aqualandia.net/wp-content/themes/enfoca-child/images/logo-aqualandia.png" alt="Profile"/>
-            </div>
-        </div>
     </aside>
 
     <main class="flex-1 ml-20 md:ml-24 flex flex-col h-screen">
@@ -90,13 +53,11 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
                     <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-                        <a href="cursos.html">
-                            <span class="material-icons text-slate-600 dark:text-slate-300">chevron_left</span>
-                        </a>
+                        <span class="material-icons text-slate-600">chevron_left</span>
                     </button>
                     <div>
                         <h1 class="text-xl font-bold tracking-tight uppercase">Lunes a Viernes</h1>
-                        <p class="text-xs font-medium text-primary uppercase tracking-wider">Salvamento Acuático</p>
+                        <p class="text-xs font-medium text-primary uppercase">Salvamento Acuático</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2">
@@ -107,53 +68,45 @@
         </header>
 
         <div class="flex-1 overflow-y-auto ios-scroller p-4 lg:p-10 space-y-8 pb-32">
-            
             <section>
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Calendario Semanal</h2>
                     <span id="current-date-text" class="text-xs text-primary font-medium italic"></span>
                 </div>
-                <div id="calendar-container" class="flex space-x-3 overflow-x-auto ios-scroller pb-4 px-2 items-center">
-                    </div>
+                <div id="calendar-container" class="flex space-x-3 overflow-x-auto ios-scroller pb-4 px-2 items-center"></div>
             </section>
 
             <section>
                 <div class="flex items-center justify-between mb-4">
-                    <h2 id="student-count" class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Alumnos Inscritos</h2>
-                    <button onclick="toggleAllCheckboxes()" class="text-xs font-semibold text-primary flex items-center hover:opacity-70 transition-opacity">
+                    <h2 id="student-count" class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Alumnos (Cargando...)</h2>
+                    <button onclick="toggleAllCheckboxes()" class="text-xs font-semibold text-primary flex items-center">
                         <span class="material-icons text-sm mr-1">done_all</span> Marcar todos
                     </button>
                 </div>
-                <div id="student-list" class="space-y-3">
-                    </div>
+                <div id="student-list" class="space-y-3"></div>
             </section>
 
             <section>
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Observaciones Diarias</h2>
-                    <span class="material-icons text-slate-400 text-sm">edit_note</span>
-                </div>
-                <div class="relative">
-                    <textarea class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-sm focus:ring-primary focus:border-primary placeholder:text-slate-400" placeholder="Añade notas..." rows="4"></textarea>
-                    <div class="absolute bottom-4 right-4 flex space-x-2">
-                        <button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-400 hover:text-primary"><span class="material-icons text-base">attach_file</span></button>
-                        <button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-400 hover:text-primary"><span class="material-icons text-base">mic</span></button>
-                    </div>
-                </div>
+                <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-4">Observaciones</h2>
+                <textarea id="daily-notes" class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-sm focus:ring-primary focus:border-primary" rows="4" placeholder="Notas del día..."></textarea>
             </section>
         </div>
 
         <div class="absolute bottom-10 right-10 left-32 flex pointer-events-none">
             <div class="flex-1"></div>
-            <button class="pointer-events-auto h-16 px-10 rounded-full bg-primary text-white font-bold flex items-center justify-center space-x-3 shadow-2xl shadow-primary/40 active:scale-95 transition-all">
+            <button onclick="guardarAsistencia()" class="pointer-events-auto h-16 px-10 rounded-full bg-primary text-white font-bold flex items-center space-x-3 shadow-2xl active:scale-95 transition-all">
                 <span class="material-icons">save</span>
-                <span>GUARDAR ASISTENCIA</span>
+                <span>GUARDAR SESIÓN</span>
             </button>
         </div>
     </main>
 
     <script>
-        const JSON_URL = 'https://raw.githubusercontent.com/giroparex/gestor-estudiantes/main/alumnos.json';
+        const GITHUB_USER = "giroparex";
+        const GITHUB_REPO = "gestor-estudiantes";
+        const FILE_PATH = "alumnos.json";
+        const JSON_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${FILE_PATH}?t=${Date.now()}`;
+        
         const daysNames = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB'];
         const monthsNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -174,7 +127,7 @@
                 const isToday = dayDate.toDateString() === new Date().toDateString();
                 
                 const btn = document.createElement('button');
-                btn.className = `flex-shrink-0 w-16 h-20 rounded-2xl border flex flex-col items-center justify-center space-y-1 transition-all ${isToday ? 'bg-primary border-primary text-white shadow-lg scale-110 mx-2' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100'}`;
+                btn.className = `flex-shrink-0 w-16 h-20 rounded-2xl border flex flex-col items-center justify-center space-y-1 transition-all ${isToday ? 'bg-primary border-primary text-white shadow-lg scale-110 mx-2 z-10' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100'}`;
                 if ((dayDate.getDay() === 0 || dayDate.getDay() === 6) && !isToday) btn.style.opacity = "0.5";
 
                 btn.innerHTML = `<span class="text-[10px] font-bold ${isToday ? 'opacity-90' : 'text-slate-400'}">${daysNames[dayDate.getDay()]}</span><span class="text-lg font-bold">${dayDate.getDate()}</span>`;
@@ -185,10 +138,15 @@
         async function fetchStudents() {
             try {
                 const response = await fetch(JSON_URL);
-                const students = await response.json();
-                renderStudents(students);
+                const allStudents = await response.json();
+                
+                // FILTRAR: Solo alumnos del curso actual (LUNES A VIERNES)
+                const filtered = allStudents.filter(s => s.course === "LUNES A VIERNES");
+                
+                renderStudents(filtered);
             } catch (error) {
-                document.getElementById('student-list').innerHTML = `<p class="text-center text-slate-500 py-10">Error al cargar datos de GitHub.</p>`;
+                console.error(error);
+                document.getElementById('student-list').innerHTML = `<p class="text-center text-slate-500 py-10">Error cargando alumnos de GitHub.</p>`;
             }
         }
 
@@ -196,20 +154,25 @@
             const list = document.getElementById('student-list');
             document.getElementById('student-count').innerText = `Alumnos Inscritos (${students.length})`;
             list.innerHTML = '';
+
             students.forEach(s => {
                 const card = document.createElement('div');
                 card.className = "p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm";
+                
+                // Usar foto del JSON o un placeholder con el nombre
+                const fotoSrc = s.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(s.name)}&background=random`;
+                
                 card.innerHTML = `
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
-                            <img class="w-full h-full object-cover" src="${s.foto || 'https://ui-avatars.com/api/?name='+s.nombre}" alt="Avatar">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border">
+                            <img class="w-full h-full object-cover" src="${fotoSrc}" alt="Avatar">
                         </div>
                         <div>
-                            <p class="font-semibold text-sm">${s.nombre}</p>
-                            <p class="text-[10px] text-slate-400">Asistencia: ${s.asistencia_total || 0}%</p>
+                            <p class="font-semibold text-sm">${s.name || 'Sin nombre'}</p>
+                            <p class="text-[10px] text-slate-400">${s.phone1 || 'Sin teléfono'}</p>
                         </div>
                     </div>
-                    <input type="checkbox" class="student-checkbox w-6 h-6 rounded-full text-primary focus:ring-primary border-slate-300 dark:border-slate-700">
+                    <input type="checkbox" data-id="${s.id}" class="student-checkbox w-6 h-6 rounded-full text-primary focus:ring-primary border-slate-300 dark:border-slate-700">
                 `;
                 list.appendChild(card);
             });
@@ -219,6 +182,16 @@
             const checks = document.querySelectorAll('.student-checkbox');
             const allChecked = Array.from(checks).every(c => c.checked);
             checks.forEach(c => c.checked = !allChecked);
+        }
+
+        function guardarAsistencia() {
+            const data = {
+                fecha: new Date().toLocaleDateString(),
+                asistentes: Array.from(document.querySelectorAll('.student-checkbox:checked')).map(cb => cb.dataset.id),
+                notas: document.getElementById('daily-notes').value
+            };
+            console.log("Guardando sesión:", data);
+            alert("Asistencia guardada localmente.\nPara guardar en GitHub se requiere integración con API.");
         }
 
         document.addEventListener('DOMContentLoaded', () => {
