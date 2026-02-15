@@ -112,32 +112,25 @@
     </main>
 
     <script>
-        async function checkPassword() {
+       function checkPassword() {
     const inputField = document.getElementById('passwordInput');
-    const pass = inputField.value.trim(); // .trim() elimina espacios accidentales
+    const pass = inputField.value.trim();
     const errorMsg = document.getElementById('errorMessage');
-    
-    // Hash
-    const HASH_CORRECTO = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
 
-    try {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(pass);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    const PASS_ENCODED = "MTIzNHF3ZXI=";
 
-        if (hashHex === HASH_CORRECTO) {
-            sessionStorage.setItem('acceso_permitido', 'true');
-            window.location.href = "panelprincipal.html";
-        } else {
-            errorMsg.classList.remove('hidden');
-            inputField.classList.add('border-red-500', 'shake');
-            setTimeout(() => inputField.classList.remove('shake'), 400);
-        }
-    } catch (e) {
-        console.error("Error en el cifrado:", e);
-        alert("Tu navegador no soporta esta función de seguridad.");
+    // Convertimos lo que el usuario escribe a Base64 para comparar
+    const passToCompare = btoa(pass);
+
+    if (passToCompare === PASS_ENCODED) {
+        sessionStorage.setItem('acceso_permitido', 'true');
+        window.location.href = "panelprincipal.html";
+    } else {
+        errorMsg.classList.remove('hidden');
+        inputField.classList.add('border-red-500', 'shake');
+        setTimeout(() => {
+            inputField.classList.remove('shake');
+        }, 400);
     }
 }
 
