@@ -116,4 +116,48 @@
         </a>
     </div>
 
-    <div class="mb-10 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark
+    <div class="mb-10 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden w-full">
+        <div class="flex border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 p-2 gap-2">
+            <button type="button" id="btn-piscina" onclick="verPDF('piscina')" 
+                class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all bg-primary text-white shadow-md">
+                🏊 Uso de Piscina
+            </button>
+            <button type="button" id="btn-socorrismo" onclick="verPDF('socorrismo')" 
+                class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all bg-transparent text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700">
+                🆘 Cursos Socorrismo
+            </button>
+        </div>
+
+        <p id="titulo-pdf" class="text-slate-500 dark:text-slate-400 text-sm m-4 font-medium italic">Mostrando: Cronograma uso de la piscina</p>
+        
+        <div class="w-full h-[100dvh] min-h-[800px] bg-slate-100">
+            <iframe id="visor-pdf" src="https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/giroparex/aaa/Cronogramas/Cronograma-Uso-de-Piscina-2026-CdT.pdf&embedded=true" class="w-full h-full border-none"></iframe>
+        </div>
+    </div>
+</main>
+
+<script>
+    function verPDF(tipo) {
+        const iframe = document.getElementById('visor-pdf');
+        const titulo = document.getElementById('titulo-pdf');
+        const btnPiscina = document.getElementById('btn-piscina');
+        const btnSocorrismo = document.getElementById('btn-socorrismo');
+        
+        const urlPiscina = "https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/giroparex/aaa/Cronogramas/Cronograma-Uso-de-Piscina-2026-CdT.pdf&embedded=true";
+        const urlSocorrismo = "https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/giroparex/aaa/Cronogramas/Cursos-de-Socorrismo-2026-CdT.pdf&embedded=true";
+
+        if (tipo === 'piscina') {
+            iframe.src = urlPiscina;
+            titulo.innerText = "Mostrando: Cronograma uso de la piscina";
+            btnPiscina.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all bg-primary text-white shadow-md";
+            btnSocorrismo.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all bg-transparent text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700";
+        } else {
+            iframe.src = urlSocorrismo;
+            titulo.innerText = "Mostrando: Cursos de Socorrismo";
+            btnSocorrismo.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all bg-primary text-white shadow-md";
+            btnPiscina.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all bg-transparent text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700";
+        }
+    }
+</script>
+</body>
+</html>
