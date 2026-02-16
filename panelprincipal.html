@@ -151,25 +151,39 @@
     <p class="text-slate-500 dark:text-slate-400 text-sm m-4 font-medium">Cronograma uso de la piscina</p>
     
     <div class="w-full h-screen min-h-[800px] overflow-hidden">
-    <iframe 
-    src="https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/giroparex/aaa/Cronogramas/Cronograma-Uso-de-Piscina-2026-CdT.pdf&embedded=true" 
-    class="w-full h-full border-none">
-</iframe>
-</div>
+        <iframe 
+            id="iframe-piscina"
+            src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/giroparex/aaa/main/Cronogramas/Cronograma-Uso-de-Piscina-2026-CdT.pdf&embedded=true"
+            class="w-full h-full border-none"
+            style="display: block; width: 100%; height: 100%;">
+        </iframe>
     </div>
 </div>
-    </div>
-<!-- Cronograma cursos -->    
-    <div class="mb-10 bg-white dark:bg-slate-800 p-0 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden w-full">
+
+<div class="mb-10 bg-white dark:bg-slate-800 p-0 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden w-full">
     <p class="text-slate-500 dark:text-slate-400 text-sm m-4 font-medium">Cronograma cursos</p>
     
     <div class="w-full h-[100dvh] min-h-[800px] overflow-hidden bg-gray-100">
-    <iframe 
-    src="https://docs.google.com/viewer?url=https://cdn.jsdelivr.net/gh/giroparex/aaa/Cronogramas/Cursos-de-Socorrismo-2026-CdT.pdf&embedded=true" 
-    class="w-full h-full border-none">
-</iframe>
-</div>
+        <iframe 
+            id="iframe-cursos"
+            src="" 
+            class="w-full h-full border-none"
+            style="display: block; width: 100%; height: 100%;">
+        </iframe>
     </div>
+</div>
+
+<script>
+    window.addEventListener('load', function() {
+        // Esperamos 2.5 segundos para cargar el segundo PDF
+        setTimeout(function() {
+            const iframeCursos = document.getElementById('iframe-cursos');
+            if (iframeCursos) {
+                iframeCursos.src = "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/giroparex/aaa/main/Cronogramas/Cursos-de-Socorrismo-2026-CdT.pdf&embedded=true";
+            }
+        }, 2500); 
+    });
+</script>
 </section>
 </main>
 
