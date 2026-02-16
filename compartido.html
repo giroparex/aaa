@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+    <script>
+  if (sessionStorage.getItem('acceso_permitido') !== 'true') {
+      window.location.href = "index.html";
+  }
+</script>
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Carpeta compartida</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Lexend', sans-serif; }
+        .sidebar-item-active { background-color: rgba(19, 164, 236, 0.15); border-right: 4px solid #13a4ec; color: #13a4ec; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    </style>
+    <style>
+        body {
+            /* Cambio a altura dinámica para evitar cortes en móvil */
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex min-h-screen">
+    <aside class="w-20 md:w-24 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-8 gap-10 fixed h-full z-20">
+<div class="mb-4">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-icons-round text-3xl">waves</span>
+</div>
+</div>
+<nav class="flex flex-col gap-6 w-full px-2">
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="panelprincipal.html">
+<span class="material-icons-round">dashboard</span>
+<span class="text-[10px] font-medium mt-1">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="cursos.html">
+<span class="material-icons-round">school</span>
+<span class="text-[10px] font-medium mt-1">Cursos</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary/10 text-primary transition-colors group" href="alumnos.html">
+<span class="material-icons-round">people</span>
+<span class="text-[10px] font-medium mt-1">Alumnos</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-xl text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="agenda.html">
+<span class="material-icons-round">calendar_today</span>
+<span class="text-[10px] font-medium mt-1">Agenda</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-14 h-14 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-icons-round">settings</span>
+</button>
+<div class="w-14 h-14 rounded-xl overflow-hidden border-2 border-primary/20 bg-white flex items-center justify-center">
+<img class="w-full h-full object-contain p-1" alt="Logo Aqualandia" src="https://www.aqualandia.net/wp-content/themes/enfoca-child/images/logo-aqualandia.png"/>
+</div>
+</div>
+</aside>
+
+    <main class="flex-1 ml-20 md:ml-24 p-6 md:p-10">
+        <header class="mb-10 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Carpeta compartida</h1>
+                <p class="text-slate-500 dark:text-slate-400 font-light mt-1">Socorrismo Aqualandia</p>
+            </div>
+        </header>
+
+        <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: calc(100dvh - 250px); min-height: 500px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);">
+            <iframe 
+                src="https://giroparex.github.io/gestor-estudiantes/" 
+                title="Gestor de Alumnos"
+                width="100%" 
+                height="100%" 
+                style="border: 0;"
+                allow="clipboard-write"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-3 px-6 flex justify-around items-center z-30">
+            <button class="text-slate-400 flex flex-col items-center">
+                <span class="material-icons-round">dashboard</span>
+                <span class="text-[10px] mt-1 font-medium">Panel</span>
+            </button>
+            <button class="text-primary flex flex-col items-center">
+                <span class="material-icons-round">group</span>
+                <span class="text-[10px] mt-1 font-medium">Alumnos</span>
+            </button>
+            <button class="text-slate-400 flex flex-col items-center">
+                <span class="material-icons-round">school</span>
+                <span class="text-[10px] mt-1 font-medium">Cursos</span>
+            </button>
+            <button class="text-slate-400 flex flex-col items-center">
+                <span class="material-icons-round">menu</span>
+                <span class="text-[10px] mt-1 font-medium">Más</span>
+            </button>
+        </div>
+    </main>
+</div>
+</body>
+</html>
